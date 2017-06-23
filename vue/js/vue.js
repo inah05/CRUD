@@ -3,6 +3,7 @@
  */
 // https://jsfiddle.net/jpeter06/ppyeo1tg/
 //https://stackoverflow.com/questions/43250649/vue-component-and-alert-on-click-button
+//https://medium.com/@InaniT0
 
 Vue.config.devtools = true;
 
