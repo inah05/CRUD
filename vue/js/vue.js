@@ -9,7 +9,13 @@ Vue.config.devtools = true;
 
 Vue.component('todo-list',{
     props:['atodo'],
-    template: '<li @dbClick><button type="button" v-on:click="del">X</button>&nbsp;&nbsp; {{atodo.text}} </li>'
+    template: "<li @dbClick><button type='button' @click='doDelete(todo)'>X</button>&nbsp;&nbsp; {{atodo.text}} </li>",
+    methods:         {
+        doDelete: function(todo) {
+            console.log(todo);
+         //$remove(todo);
+        }
+    }
 })
 
  var oTodo = new Vue({
@@ -22,10 +28,6 @@ Vue.component('todo-list',{
      methods: {
          add: function() {
              this.todos.push({text: oTodo.todo})
-         },
-         del: function(todo) {
-             console.log(todo);
-             this.todos.$remove(todo);
          }
      }
  })
