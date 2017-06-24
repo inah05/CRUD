@@ -12,7 +12,11 @@ Vue.component('todo-list',{
     template: "<li @dbClick><button type='button' @click='doDelete'>X</button>&nbsp;&nbsp; {{atodo.text}} </li>",
     methods:         {
         doDelete: function() {
+            oTodo.todos.splice(this._uid,1);
+            console.log(this._uid);
             console.log(this.atodo.text);
+            console.log(oTodo.todos);
+            //Just hide the item
             //this.atodo.$remove(this.atodo.text);
         }
     }
