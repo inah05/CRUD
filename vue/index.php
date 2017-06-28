@@ -7,6 +7,11 @@
 <body>
 <div id="todo">
     <ol>
+        <!--<todo-list v-for="(todo , index) in todos"-->
+        <!--           v-bind:todo="todo"-->
+        <!--           v-bind:key="todo.id"-->
+        <!--           v-bind:index="todo.index">-->
+        <!--</todo-list>-->
         <todo-list v-for="todo in todos" v-bind:atodo="todo">
         </todo-list>
     </ol>

@@ -10,15 +10,21 @@ Vue.config.devtools = true;
 
 Vue.component('todo-list',{
     props:['atodo'],
-    template: "<li @dbClick><button type='button' @click='doDelete'>X</button>&nbsp;&nbsp; {{atodo.text}} </li>",
+    template: "<li v-model='todotext'><button type='button' @click='doDelete'>X</button>&nbsp;&nbsp; {{atodo.text}} </li>",
     methods:         {
         doDelete: function() {
-            oTodo.todos.splice(this._uid,1);
-            console.log(this._uid);
-            console.log(this.atodo.text);
-            console.log(oTodo.todos);
-            //Just hide the item
-            //this.atodo.$remove(this.atodo.text);
+
+            //console.log(oTodo.todo);
+            //console.log(oTodo.todos.indexOf(oTodo.todos.text));
+            // oTodo.todos.splice(oTodo.todos.index - 1,1);
+            //  console.log(this._uid);
+            //  console.log(oTodo.todos.index);
+            //  console.log(oTodo.todos);
+        }
+    },
+    data: function(){
+        return {
+            atodo: atodo
         }
     }
 })
@@ -26,13 +32,17 @@ Vue.component('todo-list',{
  var oTodo = new Vue({
      el: '#todo',
      data: {
-         todos:[],
+         todos:[
+
+         ],
          message: 'Add todo',
          todo: ''
      },
      methods: {
          add: function() {
-             this.todos.push({text: oTodo.todo})
+             //TODO: localStorage
+             this.todos.push({text: oTodo.todo});
+             this.todo='';
          }
      }
  })
