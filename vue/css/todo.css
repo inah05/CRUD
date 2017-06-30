@@ -1,0 +1,20 @@
+/*For mdl*/
+
+.mdl-color--primary {
+    background-color: rgb(245,229,255);
+}
+
+.demo-card-wide.mdl-card {
+    width: 650px;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 150px;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
+
+.done {
+    text-decoration: line-through;
+}
