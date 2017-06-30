@@ -32,16 +32,17 @@
     <input type="checkbox">&nbsp;&nbsp;<input type="text"  v-on:keyup.enter="addTodo" v-model="todo">&nbsp;&nbsp;
     <ol>
         <li v-for="todos in todolist">
+            <!--For rendering of each tasks-->
             <input type="checkbox" v-model="todos.checked" :disabled="todos.shown">
             <span v-bind:class="{done: todos.checked, hide: todos.hide}" v-on:dblclick="showData(todos)"> <!--Can only update if not done-->
                 {{todos.text}}
             </span>
+            <!--END-->
                 <!--For Edit-->
                 <span>
-                    <input type="text" v-model="todos.text" v-show="todos.shown" @keyup.enter="editTodo(todos)"> <!--Only the certain data , the input text will be shown-->
+                    <input type="text" v-model="todos.text" v-show="todos.shown" @keyup.enter="editTodo(todos)">
                 </span>
                 <!--END-->
-
             <button v-on:click="delTodo(todos)">X</button>
         </li>
     </ol>

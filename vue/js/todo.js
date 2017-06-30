@@ -8,34 +8,55 @@ var oTodo = new Vue({
         todo:''
     },
     methods: {
+        //Push value to the array
+        //shown: for the input text in editing
+        //hide: for the span rendering each todo items
         addTodo: function() {
             value = this.todo.trim();
             if (value) {
-                this.todolist.push({text: this.todo, checked: false, shown: false, hide: false});
+                this.todolist.push(
+                    {
+                        text: this.todo,
+                        checked: false,
+                        shown: false,
+                        hide: false
+                    }
+                );
                 this.todo = '';
             } else {
                 alert('Should not be empty');
             }
         },
+
+        //Delete
         delTodo: function(todos) {
             var index = this.todolist.indexOf(todos);
             this.todolist.splice(index,1);
         },
+
+        //Display the input text for editing
+        //Check first if tasks is done or  not
         showData: function(todos) {
             if (todos.checked === false) {
                 todos.shown = true;
                 todos.hide = true;
-                console.info(todos);
             } else{
                 alert('You cannot edit done tasks');
             }
         },
+
+        //Save edited value to the array
         editTodo: function(todos) {
             var index = this.todolist.indexOf(todos);
             value = todos.text;
 
             if (value) {
-                newvalue = {text: todos.text, checked: false, shown: false, hide: false}
+                newvalue = {
+                    text: todos.text,
+                    checked: false,
+                    shown: false,
+                    hide: false
+                };
 
                 //https://www.reddit.com/r/vuejs/comments/5p96hy/what_really_is_object_ob_observer/dcpher7/
                 //Due to limitations in JavaScript, Vue cannot detect the following changes to an array:
