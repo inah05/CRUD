@@ -11,19 +11,22 @@
 
 <div id="todo" class="demo-card-square mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title mdl-card--expand">
-        <h2 class="mdl-card__title-text">  </h2>
+        <i class="material-icons">art_track</i>
+        <h2 class="mdl-card__title-text"> </h2>
+        <!--TODO: add header navigations for other features-->
     </div>
     <div class="mdl-card__actions mdl-card--border">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3" v-on:keyup.enter="addTodo" v-model="todo">
+            <label class="mdl-textfield__label" for="sample3">Text...</label>
+        </div>
         <ul class="demo-list-icon mdl-list">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="sample3" v-on:keyup.enter="addTodo" v-model="todo">
-                <label class="mdl-textfield__label" for="sample3">Text...</label>
-            </div>
             <li class="mdl-list__item" v-for="todos in todolist">
                 <!--text-->
-                <span class="mdl-list__item-primary-content"  v-on:dblclick="showData(todos)" v-bind:class="{done: todos.checked, hide: todos.hide}">
-                  <i class="material-icons">lightbulb_outline</i>
-                    <span v-bind:class="{done: todos.checked, hide: todos.hide}">&nbsp;&nbsp;{{todos.text}}</span>
+                <i class="material-icons">lightbulb_outline</i>
+                <span class="mdl-list__item-primary-content" v-bind:class="{done: todos.checked, hide: todos.hide}" v-on:dblclick="showData(todos)">
+                    <span v-bind:class="{done: todos.checked, hide: todos.hide}" v-on:dblclick="showData(todos)">&nbsp;&nbsp;{{todos.text}}</span>
                 </span>
                 <!--end of text-->
                 <!--checkbox-->
@@ -34,10 +37,10 @@
                 </span>
                 <!--end of checkbox-->
                 <!--input text for edit-->
-                <span>
+                <span  v-show="todos.shown">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" v-show="todos.shown">
                         <input class="mdl-textfield__input" type="text" id="sample4" v-model="todos.text" v-show="todos.shown" @keyup.enter="editTodo(todos)">
-                        <label class="mdl-textfield__label" for="sample3"  v-show="todos.shown">Text...</label>
+                        <label class="mdl-textfield__label" for="sample4"  v-show="todos.shown">Text...</label>
                     </div>
                 </span>
                 <!--end for input text of edit-->

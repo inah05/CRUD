@@ -16,10 +16,6 @@
     width: 500px;
 }
 
-.demo-card-square > .mdl-card__title {
-
-}
-
 .demo-card-square.mdl-card__actions.mdl-card--border {
     height: auto;
 }
@@ -34,8 +30,4 @@
 
 .demo-list-radio {
     display: inline;
-}
-
-.mdl-list__item .mdl-list__item-primary-content {
-    width: 1000000px;
 }
