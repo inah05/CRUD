@@ -4,21 +4,38 @@
     background-color: rgb(245,229,255);
 }
 
-.demo-card-wide.mdl-card {
-    width: 650px;
-}
-.demo-card-wide > .mdl-card__title {
-    color: #fff;
-    height: 150px;
-}
-.demo-card-wide > .mdl-card__menu {
-    color: #fff;
-}
-
 .done {
     text-decoration: line-through;
 }
 
 .hide {
     display: none;
+}
+
+.demo-card-square.mdl-card {
+    width: 500px;
+}
+
+.demo-card-square > .mdl-card__title {
+
+}
+
+.demo-card-square.mdl-card__actions.mdl-card--border {
+    height: auto;
+}
+.demo-card-square.mdl-card__title.mdl-card--expand {
+    height: 100px;
+    color: #e0e7ff;
+}
+
+.demo-list-control {
+    width: 300px;
+}
+
+.demo-list-radio {
+    display: inline;
+}
+
+.mdl-list__item .mdl-list__item-primary-content {
+    width: 1000000px;
 }
